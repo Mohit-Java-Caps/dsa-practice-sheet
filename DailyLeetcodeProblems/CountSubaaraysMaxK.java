@@ -1,0 +1,21 @@
+class Solution {
+    public long countSubarrays(int[] nums, int k) {
+        int max = Arrays.stream(nums).max().getAsInt();
+        long count = 0;
+        int left = 0, maxCount = 0;
+
+        for(int right = 0;right< nums.length;right++){
+            if(nums[right] == max ){
+                maxCount++;
+            }
+            while(maxCount >= k){
+                count+= nums.length - right;
+                if(nums[left] == max){
+                    maxCount--;
+                }
+                left++;
+            }
+        }
+        return count;
+    }
+}
