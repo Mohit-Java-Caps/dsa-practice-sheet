@@ -1,5 +1,6 @@
+
 class Solution {
-    public int longestPalindrome(String[] words) {
+    public int longestPalindromeHard(String[] words) {
         int[][] count = new int[26][26];
         int length = 0;
         boolean hasCenter = false;
